@@ -1,0 +1,9 @@
+..  The abstract is placed here rather than in metadata.yaml
+    for better reliability and visibility in the document structure.
+
+:abstract: |
+  This is the abstract of the article. It should provide a concise summary
+  of the article's content, main arguments, methodology, and findings.
+  The abstract should be between 150-250 words.
+
+..  Your article content begins below this line
