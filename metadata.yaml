@@ -41,7 +41,7 @@ toc-depth: 3  # Depth of headings in table of contents
 # Citation and References
 bibliography: references/bibliography.bib
 csl: csl/ieee.csl  # Citation style
-reference-section-title: References
+reference-section-title: Посилання
 link-citations: true  # Hyperlink citations to bibliography entries
 link-bibliography: true  # Hyperlink bibliography entries to citations
 nocite: "@*"  # Include all bibliography entries even if not cited
