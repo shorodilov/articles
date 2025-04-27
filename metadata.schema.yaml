@@ -1,0 +1,576 @@
+# metadata.schema.yaml
+
+title: Pandoc metadata
+description: The schema for the Pandoc's metadata blocks
+$comment: |
+  seealso:: https://pandoc.org/MANUAL.html#variables
+  seealso:: https://pandoc.org/MANUAL.html#metadata-variables
+$id: metadata.schema
+type: object
+additionalProperties: true
+required:
+  - title
+  - author
+properties:
+  # Metadata variables
+  # ------------------
+  # Allow identification of basic aspects of the document.
+  # Included in PDF metadata through LaTeX and ConTeXt.
+  # Note that if you just want to set PDF or HTML metadata,
+  # without including a title block in the document itself,
+  # you can set the title-meta, author-meta, and date-meta variables.
+  # (By default, these are set automatically, based on title, author, and date.)
+  # The page title in HTML is set by `pagetitle`,
+  # which is equal to the `title` by default.
+  # Additionally, any root-level string metadata, not included in ODT,
+  # docx or pptx metadata is added as a custom property.
+
+  # noinspection YAMLSchemaValidation
+  title:
+    description: Document title.
+    type: string
+  author:
+    description: Document author(s); repeat for multiple.
+    anyOf:
+      - type: string
+        minLength: 2
+      - type: array
+        items:
+          type: string
+          minLength: 2
+      - type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 2
+            affiliation:
+              type: string
+          required:
+            - name
+    examples:
+      - author:
+          - Aristotle
+          - Peter Abelard
+      - author:
+          - Pythagoras
+      - author: Tom
+  date:
+    description: Document creation or last update date.
+    type: string
+  subtitle:
+    description: |
+      Document subtitle, included in html, epub, la te x, con te xt, and
+      docx documents.
+    type: string
+  abstract:
+    description: |
+      Document summary, included in html, la te x, con te xt, ascii doc, and
+      docx documents.
+    type: string
+  abstract-title:
+    description: |
+      Title of abstract, currently used only in html, epub, and docx.
+      This will be set automatically to a localized value, depending on lang,
+      but can be manually overridden.
+    type: string
+  keywords:
+    description: |
+      List of keywords to be included in html, pdf, odt, pptx, docx and
+      AsciiDoc metadata; repeat for multiple.
+    type: array
+    items:
+      type: string
+    examples:
+      - keywords:
+          - keyword1
+          - keyword2
+  subject:
+    description: |
+      Document subject, included in odt, pdf, docx, epub, and pptx metadata.
+    type: string
+  # noinspection YAMLSchemaValidation
+  description:
+    description: |
+      Document description, included in odt, docx and pptx metadata.
+      Some applications show this as Comments metadata.
+    type: string
+  category:
+    description: |
+      Document category, included in docx and pptx metadata
+    type: string
+  # Language variables
+  # ------------------
+  lang:
+    description: |
+      Identifies the main language of the document using ietf language tags
+      (following the BCP 47 standard), such as "en" or "en-GB".
+    type: string
+  dir:
+    $comment: |
+      When using LaTeX for bidirectional documents, only the xelatex engine
+      is fully supported (use `--pdf-engine=xelatex`).
+    description: |
+      The base script direction, either rtl (right to left) or
+      ltr (left-to-right).
+    type: string
+    enum:
+      - ltr
+      - rtl
+  # Shared variables
+  # ----------------
+  linestretch:
+    description: |
+      For HTML output, sets the CSS line height property on the HTML element,
+      which is preferred to be unitless.
+      For PDF output adjusts line spacing using the `setspace` package.
+    type: number
+    examples:
+      - 1.25
+      - 1.5
+  margin-left:
+    description: |
+      For HTML output, sets the corresponding CSS padding properties
+      on the body element.
+      For PDF output, sets margins if geometry is not used (otherwise geometry
+      overrides these).
+    type: string
+  margin-right:
+    description: |
+      For HTML output, sets the corresponding CSS padding properties
+      on the body element.
+      For PDF output, sets margins if geometry is not used (otherwise geometry
+      overrides these).
+    type: string
+  margin-top:
+    description: |
+      For HTML output, sets the corresponding CSS padding properties
+      on the body element.
+      For PDF output, sets margins if geometry is not used (otherwise geometry
+      overrides these).
+  margin-bottom:
+    description: |
+      For HTML output, sets the corresponding CSS padding properties
+      on the body element.
+      For PDF output, sets margins if geometry is not used (otherwise geometry
+      overrides these).
+    type: string
+  # Fonts:
+  fontenc:
+    # noinspection SpellCheckingInspection
+    description: |
+      For PDF output, allows font encoding to be specified through `fonten`
+      package (with `pdflatex`).
+    type: string
+  fontsize:
+    description: |
+      for HTML output, sets the base CSS font-size.
+      For PDF output, font size for body text.
+    type: string
+    examples:
+      - fontsize: 20px
+      - fontsize: 12pt
+  fontfamily:
+    $comment: |
+      seealso:: https://tug.org/FontCatalogue/
+    description: |
+      For PDF output, font package for use with pdflatex.
+    type: string
+  fontfamilyoptions:
+    description: |
+      For PDF output, options for package used as fontfamily;
+      repeat for multiple options.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  mainfont:
+    description: |
+      For HTML output, sets the CSS font-family property on the HTML element.
+      For PDF output, font families for use with xelatex or lualatex.
+    type: string
+  mainfontoptions:
+    description: |
+      Option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  mainfontfallback:
+    description: |
+      fonts to try if a glyph isn’t found.
+    type: array
+    items:
+      type: string
+    examples:
+      - mainfontfallback:
+          - "FreeSans:"
+          - "NotoColorEmoji:mode=harf"
+  sansfont:
+    description: |
+      For PDF output, font families for use with xelatex or lualatex.
+    type: string
+  sansfontoptions:
+    description: |
+      Option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  sansfontfallback:
+    description: |
+      fonts to try if a glyph isn’t found.
+      see `mainfontfallback` for examples.
+    type: array
+    items:
+      type: string
+  monofont:
+    description: |
+      For HTML output, sets the CSS font-family property on code elements.
+      For PDF output, font families for use with xelatex or lualatex.
+    type: string
+  monofontoptions:
+    description: |
+      Option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  monofontfallback:
+    description: |
+      fonts to try if a glyph isn’t found.
+      see `mainfontfallback` for examples.
+    type: array
+    items:
+      type: string
+  mathfont:
+    description: |
+      For PDF output, font families for use with xelatex or lualatex.
+    type: string
+  mathfontoptions:
+    description: |
+      Option to use with. Allow for any choices available through fontspec;
+      repeat for multiple options.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  # noinspection SpellCheckingInspection
+  CJKmainfont:
+    description: |
+      For PDF output, font families for use with xelatex or lualatex.
+    type: string
+  # noinspection SpellCheckingInspection
+  CJKsansfont:
+    description: |
+      For PDF output, font families for use with xelatex or lualatex.
+    type: string
+  # noinspection SpellCheckingInspection
+  CJKmonofont:
+    description: |
+      For PDF output, font families for use with xelatex or lualatex.
+    type: string
+  # noinspection SpellCheckingInspection
+  CJKoptions:
+    description: |
+      Option to use with. allow for any choices available through fontspec;
+      repeat for multiple options.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  # noinspection SpellCheckingInspection
+  luatexjapresetoptions:
+    description: |
+      Option to use with. allow for any choices available through fontspec;
+      repeat for multiple options.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  babelfonts:
+    description: a map of Babel language names.
+    # noinspection SpellCheckingInspection
+    type: object
+    patternProperties:
+      ".*":
+        type: string
+    examples:
+      - babelfonts:
+          chinese-hant: "Noto Serif CJK TC"
+          ukrainian: "Noto Serif"
+  microtypeoptions:
+    description: |
+      Options to pass to the microtype package
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+#  # Links:
+  colorlinks:
+    description: |
+      Add color to a link text; automatically enabled if any of `linkcolor`,
+      `filecolor`, `citecolor`, `urlcolor`, or `toccolor` are set.
+    type: string
+  boxlinks:
+    description: |
+      Add visible box around links (has no effect if `colorlinks` is set)
+    type: string
+  linkcolor:
+    description: |
+      For HTML output, sets the CSS color property on all links.
+      For PDF output, color for internal links.
+    type: string
+  filecolor:
+    description: Color for internal external links.
+    type: string
+  citecolor:
+    description: Color for citation links.
+    type: string
+  urlcolor:
+    description: Color for linked URLs.
+    type: string
+  toccolor:
+    description: Color for links in table of contents.
+    type: string
+  links-as-notes:
+    description: Causes links to be printed as footnotes.
+    type: string
+  urlstyle:
+    description: Style for URLs (defaults to "same").
+    type: string
+    examples:
+      - tt
+      - rm
+      - sf
+      - same
+  # Variables for HTML
+  # ------------------
+  # To override or extend some CSS for just one document,
+  # include, for example:
+  #
+  # ---
+  # header-includes: |
+  #   <style>
+  #   blockquote {
+  #     font-style: italic;
+  #   }
+  #   tr.even {
+  #     background-color: #f0f0f0;
+  #   }
+  #   td, th {
+  #     padding: 0.5em 2em 0.5em 0.5em;
+  #   }
+  #   tbody {
+  #     border-bottom: none;
+  #   }
+  #   </style>
+  # ---
+  document-css:
+    $comment: |
+      Unless you use `--css`, this variable is set to true by default.
+      You can disable it with e.g. `pandoc -M document-css=false`.
+    description: |
+      Enables inclusion of most of the CSS in the styles.html partial.
+    type: string
+  fontcolor:
+    description: |
+      Sets the CSS color property on the HTML element.
+    type: string
+  monobackgroundcolor:
+    description: |
+      Sets the CSS background-color property on code elements and
+      adds extra padding.
+    type: string
+  maxwidth:
+    description: |
+      Sets the CSS max-width property (default is "36em").
+    type: string
+  backgroundcolor:
+    description: |
+      Sets the CSS background-color property on the HTML element.
+    type: string
+  # Variables for LaTeX
+  # -------------------
+  # Layout:
+  block-headings:
+    # noinspection SpellCheckingInspection
+    $comment: |
+      Instead of using this option, KOMA-Script can adjust headings more
+      extensively:
+      ---
+      documentclass: scrartcl
+      header-includes: |
+        \RedeclareSectionCommand[
+          beforeskip=-10pt plus -2pt minus -1pt,
+          afterskip=1sp plus -1sp minus 1sp,
+          font=\normalfont\itshape]{paragraph}
+        \RedeclareSectionCommand[
+          beforeskip=-10pt plus -2pt minus -1pt,
+          afterskip=1sp plus -1sp minus 1sp,
+          font=\normalfont\scshape,
+          indent=0pt]{subparagraph}
+      ...
+    description: |
+      Make `\paragraph` and `\subparagraph` (fourth- and fifth-level headings,
+      or fifth- and sixth-level with book classes) freestanding rather than
+      run-in; requires further formatting to distinguish from
+      `\subsubsection` (third- or fourth-level headings).
+    type: string
+  classoption:
+    description: |
+      Option for document class; repeat for multiple options.
+    anyOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+    # noinspection SpellCheckingInspection
+    examples:
+      - classoption: landscape
+      - classoption:
+          - landscape
+      - classoption:
+          - twocolumn
+          - landscape
+  documentclass:
+    # noinspection SpellCheckingInspection
+    description: |
+      Document class: usually one of the standard classes, "article", "book",
+      and "report"; the KOMA-Script equivalents, `scrartcl`, `scrbook`, and
+      `scrreprt`, which default to smaller margins; or `memoir`.
+    type: string
+  geometry:
+    description: |
+      Option for geometry package; repeat for multiple options.
+    type: array
+    items:
+      type: string
+    # noinspection SpellCheckingInspection
+    examples:
+      - geomentry:
+          - margin=1in
+      - geometry:
+          - margine=2cm
+      - geometry:
+          - top=30mm
+          - left=20mm
+          - heightrounded
+  hyperrefoptions:
+    description: |
+      Option for hyperref package, e.g. linktoc=all;
+      repeat for multiple options.
+    type: array
+    items:
+      type: string
+    # noinspection SpellCheckingInspection
+    examples:
+      - hyperrefoptions:
+          - linktoc=all
+          - pdfwindowui
+          - pdfpagemode=FullScreen
+  indent:
+    description: |
+      If true, pandoc will use document class settings for indentation.
+    type: boolean
+  papersize:
+    description: |
+      Paper size.
+    type: string
+    examples:
+      - letter
+      - a4
+  secnumdepth:
+    description: |
+      Numbering depth for sections.
+    type: integer
+  #beamerarticle:  # IGNORE: no slides output support in this schema.
+  csquotes:
+    description: |
+      Load csquotes package and use `\enquote` or `\enquote*` for quoted text.
+    type: boolean
+  babeloptions:
+    description: |
+      Options to pass to the babel package; repeat for multiple options.
+    type: string
+  # Front matter:
+  lof:
+    description: Include a list of figures.
+    type: boolean
+  lot:
+    description: Include a list of tables.
+    type: boolean
+  thanks:
+    description: Contents of acknowledgments footnote after document title.
+    type: string
+  toc:
+    $comment: can also be set using --toc/--table-of-contents.
+    description: Include table of contents.
+    type: boolean
+  toc-depth:
+    description: Level of section to include in table of contents.
+    type: integer
+  # BibLaTeX Bibliographies:
+  biblatexoptions:
+    description: List of options for biblatex.
+    type: string
+  biblio-style:
+    description: Bibliography style, when used with --natbib and --biblatex.
+    type: string
+  biblio-title:
+    description: Bibliography title, when used with --natbib and --biblatex.
+    type: string
+  bibliography:
+    description: Bibliography to use for resolving references.
+    type: string
+  natbiboptions:
+    description: List of options for natbib.
+    type: array
+    items:
+      type: string
+  nocite:
+    description: |
+      Include items in the bibliography without actually citing them in
+      the body text.
+    type: string
+    examples:
+      - nocite: "@*"
+      - nocite: "@item1,@item2"
+  link-citations:
+    description: |
+      If true, citations will be hyperlinked to the corresponding bibliography
+      entries.
+    type: boolean
+    default: false
+  link-bibliography:
+    # noinspection SpellCheckingInspection
+    description: |
+      If true, DOIs, PMCIDs, PMID, and URLs in bibliographies will be rendered
+      as hyperlinks.
+    type: boolean
+    default: true
+  csl:
+    description: |
+      Set the csl field in the document’s metadata to FILE,
+      overriding any value set in the metadata.
+    type: string
+  # Custom properties
+  # -----------------
+  repository:
+    description: Link to the remote repository, if applicable.
+    type: string
+  version:
+    description: Document version tag.
+    type: string

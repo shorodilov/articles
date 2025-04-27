@@ -30,4 +30,4 @@ jobs:
           node-version: 18
       - run: npm install -g ajv-cli@5.0.0
       - name: validate metadata file
-        run: ajv validate --spec=draft2020 -s metadata.schema.json -d metadata.yaml
+        run: ajv validate --spec=draft2020 -s metadata.schema.yaml -d metadata.yaml
