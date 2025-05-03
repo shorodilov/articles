@@ -5,6 +5,7 @@
 
 # Source:
 repository: https://github.com/shorodilov/article-01.git
+version: 1.0-rc3
 
 # Basic Information
 title: CS50 - найкращий онлайн курс для початківців від Гарварда?
