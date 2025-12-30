@@ -1,0 +1,49 @@
+# EditorConfig
+# see: https://editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Common settings
+[*]
+charset = utf-8
+tab_width = 4
+indent_size = 4
+indent_style = space
+max_line_length = 119
+# Unix-style newlines with a newline ending every file
+end_of_line = lf
+insert_final_newline = true
+# IntelliJ IDEA specific settings
+ij_formatter_off_tag = @formatter:off
+ij_formatter_on_tag = @formatter:on
+ij_formatter_tags_enabled = true
+ij_smart_tabs = false
+ij_visual_guides = 119
+ij_wrap_on_typing = true
+ij_any_space_before_colon = false
+ij_any_space_after_colon = true
+ij_any_space_before_comma = false
+ij_any_space_after_comma = true
+ij_any_line_comment_add_space = true
+
+[{README.md,.github/**/*.md,LICENSE}]
+max_line_length = 79
+ij_visual_guides = 79
+
+[*.{json,xml,yaml,yml}]
+indent_size = 2
+tab_width = 2
+ij_any_keep_blank_lines_in_code = 1
+
+[*.json]
+max_line_length = off
+ij_visual_guides = none
+ij_json_wrap_long_lines = true
+ij_json_array_wrapping = on_every_item
+ij_json_object_wrapping = on_every_item
+ij_json_spaces_within_braces = true
+ij_json_spaces_within_brackets = true
+
+[{Makefile,makefile}]
+indent_style = tab
