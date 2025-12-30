@@ -1,0 +1,9 @@
+### Temporary files template
+/temp/
+/tmp/
+
+### IDE configuration template
+/.vscode/
+/.settings/
+/.idea/
+/.project
