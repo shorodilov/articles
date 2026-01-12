@@ -1,0 +1,118 @@
+name: 🐛 Bug Report
+description: Report a bug in the build system, scripts, or repository infrastructure
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report bugs in the repository infrastructure, build system, or scripts.
+        
+        **Note:** For content errors in publications, use "Content Fix" instead.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which component has the bug?
+      options:
+        - Makefile
+        - Build scripts
+        - Templates
+        - Configuration files
+        - Documentation
+        - Repository structure
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is
+      placeholder: Describe the bug in detail
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: How can the bug be reproduced?
+      placeholder: |
+        1. Run command '...'
+        2. Observe behavior '...'
+        3. See error
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: Describe what you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: Describe what actually happened, include error messages
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Information about your system (if relevant)
+      placeholder: |
+        - OS: [e.g., Ubuntu 22.04, macOS 13, Windows 11]
+        - Make version: [e.g., GNU Make 4.3]
+        - Pandoc version: [e.g., pandoc 3.1.2]
+        - LaTeX distribution: [e.g., TeX Live 2023]
+        - Shell: [e.g., bash 5.1, zsh 5.8]
+      value: |
+        - OS: 
+        - Make version: 
+        - Pandoc version: 
+        - Shell: 
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Error Output (Optional)
+      description: Relevant logs or error messages
+      placeholder: Paste logs here
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (Optional)
+      description: Any other information that might be helpful
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acknowledgment
+    attributes:
+      label: Acknowledgment
+      description: Please confirm you have done the following
+      options:
+        - label: I have searched existing issues for similar bugs
+          required: true
+        - label: I have provided steps to reproduce the bug
+          required: true

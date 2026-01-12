@@ -1,0 +1,75 @@
+name: 🎯 Content Request
+description: Request new content or publications on a specific technical topic
+title: "[Request] "
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a content topic! Please provide details about what you'd like to see.
+
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      description: What topic would you like to see covered?
+      placeholder: e.g., "Introduction to Rust async programming"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the topic and what aspects should be covered
+      placeholder: |
+        Explain:
+        - What specific aspects of the topic interest you
+        - What level of detail would be helpful
+        - Any particular use cases or examples you'd like to see
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why This Would Be Valuable
+      description: Explain why this publication would be valuable
+      placeholder: |
+        For example:
+        - Fills a gap in existing resources
+        - Addresses a common problem
+        - Provides practical guidance
+        - Clarifies confusing concepts
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Related Resources (Optional)
+      description: Any existing resources, papers, or articles on this topic
+      placeholder: |
+        - Link 1
+        - Link 2
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (Optional)
+      description: Any other information that might be helpful
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acknowledgment
+    attributes:
+      label: Acknowledgment
+      description: Please confirm you understand the following
+      options:
+        - label: I understand this is a single-author repository and there are no commitments to fulfill this request
+          required: true
+        - label: I have searched existing issues and publications to avoid duplicates
+          required: true

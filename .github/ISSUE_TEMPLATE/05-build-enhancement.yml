@@ -1,0 +1,109 @@
+name: ⚙️ Build System Enhancement
+description: Suggest improvements or new features for the build system
+title: "[Enhancement] "
+labels: ["enhancement", "build_sys"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to improve the build system? Share it here!
+        
+        This includes improvements to:
+        - Makefile
+        - Templates
+        - Build scripts
+        - Configuration
+        - Automation
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which part of the build system does this enhancement affect?
+      options:
+        - Makefile
+        - Pandoc templates
+        - Build scripts
+        - Configuration files
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Behavior
+      description: How does the build system currently work?
+      placeholder: Describe the current state or limitation
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed Enhancement
+      description: What improvement would you like to see?
+      placeholder: |
+        Describe:
+        - What should change
+        - How it should work
+        - Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefits
+      description: What are the benefits of this enhancement?
+      placeholder: |
+        - Improves performance
+        - Adds new capability
+        - Simplifies workflow
+        - Better error handling
+        - etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Possible Implementation (Optional)
+      description: Do you have ideas about how this could be implemented?
+      placeholder: |
+        - Technical approach
+        - Code snippets
+        - Configuration changes
+        - Dependencies needed
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered (Optional)
+      description: Have you considered alternative approaches?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (Optional)
+      description: Any other information that might be helpful
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acknowledgment
+    attributes:
+      label: Acknowledgment
+      description: Please confirm you understand the following
+      options:
+        - label: I have searched existing issues for similar enhancement requests
+          required: true
+        - label: I understand this is reviewed and implemented on a best-effort basis
+          required: true
+        - label: I am willing to contribute a PR for this enhancement if guided
+          required: false

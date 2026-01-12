@@ -1,0 +1,93 @@
+name: ✏️ Content Fix
+description: Report errors, inaccuracies, or misinformation in existing publications
+title: "[Fix] "
+labels: ["fix", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the accuracy of publications!
+        
+        **Note:** For simple corrections (typos, formatting), you can submit a Pull Request directly.
+        Use this form for corrections requiring significant discussion or research.
+
+  - type: input
+    id: publication
+    attributes:
+      label: Publication
+      description: Which publication needs correction?
+      placeholder: e.g., "article-01" or "introduction-to-rust"
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Where in the publication is the error?
+      placeholder: e.g., "Section 3.2, paragraph 4" or "Line 145 in index.rst"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Content
+      description: What does the publication currently say?
+      placeholder: Quote the incorrect or inaccurate content here
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed Correction
+      description: What should it say instead?
+      placeholder: Provide the corrected content or explanation
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / Sources
+      description: Provide sources or evidence supporting the correction
+      placeholder: |
+        Please provide:
+        - Links to authoritative sources
+        - BibTeX entries (if available)
+        - Research papers or documentation
+        - Explanation of why the current content is incorrect
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How significant is this error?
+      options:
+        - Minor (typo, formatting, clarity)
+        - Moderate (factual error, outdated information)
+        - Major (significant misinformation, security issue)
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (Optional)
+      description: Any other information that might be helpful
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acknowledgment
+    attributes:
+      label: Acknowledgment
+      description: Please confirm you understand the following
+      options:
+        - label: I have provided evidence or sources for this correction
+          required: true
+        - label: I understand corrections are reviewed on a best-effort basis
+          required: true
