@@ -1,4 +1,0 @@
-[submodule "csl-styles"]
-	path = csl
-	url = https://github.com/citation-style-language/styles.git
-	branch = v1.0.2
