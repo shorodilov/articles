@@ -27,7 +27,7 @@ ij_any_space_before_comma = false
 ij_any_space_after_comma = true
 ij_any_line_comment_add_space = true
 
-[{README.md,docs/*.md,.github/**/*.md,LICENSE}]
+[{src/**/README.md,README.md,docs/*.md,.github/**/*.md,LICENSE}]
 max_line_length = 79
 ij_visual_guides = 79
 
