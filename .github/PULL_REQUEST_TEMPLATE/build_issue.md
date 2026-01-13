@@ -7,16 +7,32 @@ about: |
 <!-- Provide changes abstract here (if applicable) -->
 {pull_request_summary}
 
+## Problem Statement
+
+<!-- Describe the bug or deficiency in the build system being addressed. -->
+
+## Description
+
+<!-- Details the changes made to resolve the build issue. -->
+
+## Impact
+
+<!--
+How does this change affect the build process? Performance?
+Or output structure?
+-->
+
 ---
 
 ## Acknowledgement
 
-<!--
-    The acknowledgement section is used to confirm that the contributor
-    has read and agrees to the terms and conditions outlined in the project's
-    documentation: contributing guide and code of conduct.
-    It cannot be bypassed, changed, or omitted.
--->
+By submitting this pull request, I confirm that:
+
+- My contribution is my original work.
+- I agree to release this work under the project's [LICENSE](/../main/LICENSE).
+- I have read and agreed to
+  the [Contributing Guide](/../main/docs/CONTRIBUTING.md)
+  and [Code of Conduct](/../docs/CODE_OF_CONDUCT.md).
 
 ---
 <!--
