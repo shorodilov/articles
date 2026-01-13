@@ -85,7 +85,7 @@ body:
         - Tried clean build
         - etc.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: additional
