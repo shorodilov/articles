@@ -1,7 +1,7 @@
 name: ✏️ Content Fix
 description: Report errors, inaccuracies, or misinformation in existing publications
 title: "[Fix] "
-labels: ["fix", "content"]
+labels: [ "fix", "content" ]
 body:
   - type: markdown
     attributes:

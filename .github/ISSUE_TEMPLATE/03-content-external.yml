@@ -1,7 +1,7 @@
 name: 📚 External Content Request
 description: Request inclusion or reference to external technical content from Git repositories
 title: "[External] "
-labels: ["external"]
+labels: [ "external", "content" ]
 body:
   - type: markdown
     attributes:

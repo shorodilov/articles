@@ -1,10 +1,18 @@
 ---
 name: 💬 General / Other
 about: For feedback, suggestions, or anything else not covered by other templates
-title: ''
-labels: ''
-assignees: ''
 ---
+
+> [!NOTE]
+> Please check if your issue fits one of the other templates:
+> - 🎯 Content Request - Request new content or publications
+> - ✏️ Content Fix - Report errors in publications
+> - 📚 External Content - Request external content inclusion
+> - 🔧 Build Issue - Problems building publications
+> - ⚙️ Build System Enhancement - Suggest build system improvements
+> - 🐛 Bug Report - Report bugs in infrastructure
+> - ❓ Question / Help - Ask questions or request help
+> - 🔒 Security - Report security issues (use Security Advisories)
 
 ## Description
 
@@ -22,13 +30,3 @@ This template is for:
 <!-- Any other information that might be helpful -->
 
 ---
-
-**Note:** Please check if your issue fits one of the other templates:
-- 🎯 Content Request - Request new content or publications
-- ✏️ Content Fix - Report errors in publications
-- 📚 External Content - Request external content inclusion
-- 🔧 Build Issue - Problems building publications
-- ⚙️ Build System Enhancement - Suggest build system improvements
-- 🐛 Bug Report - Report bugs in infrastructure
-- ❓ Question / Help - Ask questions or request help
-- 🔒 Security - Report security issues (use Security Advisories)

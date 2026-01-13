@@ -1,7 +1,7 @@
 name: ⚙️ Build System Enhancement
 description: Suggest improvements or new features for the build system
 title: "[Enhancement] "
-labels: ["enhancement", "build_sys"]
+labels: [ "build_sys", "enhancement" ]
 body:
   - type: markdown
     attributes:
