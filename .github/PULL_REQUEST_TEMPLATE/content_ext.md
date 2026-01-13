@@ -1,7 +1,7 @@
 ---
 name: "{pull_request_title}"
-about: |
-    External content contribution template
+about: Contribute the content from external sources
+labels: [ "content", "external" ]
 ---
 
 <!-- Provide changes abstract here (if applicable) -->

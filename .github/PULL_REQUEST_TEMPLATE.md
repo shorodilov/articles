@@ -1,7 +1,6 @@
 ---
 name: "[{TYPE}] {pull_request_title}"
-about: |
-    Default pull request template
+about: Submit a pull request for review
 ---
 
 > [!NOTE]

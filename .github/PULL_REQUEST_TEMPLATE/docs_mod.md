@@ -1,7 +1,7 @@
 ---
 name: "{pull_request_title}"
-about: |
-    Documentation modification proposal template
+about: Documentation modification proposal
+labels: [ "documentation", "fix" ]
 ---
 
 <!-- Provide changes abstract here (if applicable) -->
