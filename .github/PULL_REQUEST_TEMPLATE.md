@@ -35,17 +35,6 @@ What problem does it solve or what gap does it fill?
     Describe the changes introduced in this pull request.
 -->
 
-### Changes
-
-- ...
-- ...
-
-## Motivation and Context
-
-<!--
-    Why is this change required? What problem does it solve?
--->
-
 ## Additional Information
 
 <!-- Any additional information regarding this pull request -->
@@ -56,8 +45,6 @@ What problem does it solve or what gap does it fill?
 
 By submitting this pull request, I confirm that:
 
-- My contribution is either my original work or sourced from a compatible
-  license.
 - I agree to release this work under the project's [LICENSE](/../main/LICENSE).
 - I have read and agreed to
   the [Contributing Guide](/../main/docs/CONTRIBUTING.md)

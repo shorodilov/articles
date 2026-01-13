@@ -32,7 +32,6 @@ What problem does it solve or what gap does it fill?
 
 By submitting this pull request, I confirm that:
 
-- My contribution is my original work.
 - I agree to release this work under the project's [LICENSE](/../main/LICENSE).
 - I have read and agreed to
   the [Contributing Guide](/../main/docs/CONTRIBUTING.md)
