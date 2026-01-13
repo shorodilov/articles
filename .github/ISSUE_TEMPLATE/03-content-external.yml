@@ -8,7 +8,7 @@ body:
       value: |
         You can request inclusion or reference to external technical content.
         
-        > ![IMPORTANT]
+        > [!IMPORTANT]
         > - Content must exist in a Git repository
         > - Signed commits are preferred but optional
         > - Content must be relevant to this repository's scope

@@ -8,7 +8,7 @@ assignees: [ "shorodilov" ]
 
 > [!NOTE]
 > Support is provided on a best-effort basis.
-> Please see [SUPPORT.md](../docs/SUPPORT.md) for response expectations.
+> Please see [SUPPORT.md](/../main/docs/SUPPORT.md) for response expectations.
 
 ## Question
 

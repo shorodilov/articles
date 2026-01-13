@@ -95,13 +95,6 @@ body:
     validations:
       required: false
 
-  - type: textarea
-    id: additional
-    attributes:
-      label: Additional Context (Optional)
-      description: Any other information that might be helpful
-    validations:
-      required: false
 
   - type: checkboxes
     id: acknowledgment
