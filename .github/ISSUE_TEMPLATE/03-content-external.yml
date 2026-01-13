@@ -79,9 +79,9 @@ body:
       label: Acknowledgment
       description: Please confirm you understand the following
       options:
-        - label: I have verified the content exists in a Git repository
+        - label: |
+            I understand that issues are handled in a best-effort manner
           required: true
-        - label: I have confirmed the license is compatible with CC0
-          required: true
-        - label: I understand the author will review and decide on inclusion
+        - label: |
+            I understand there are no commitments to fulfill this request
           required: true

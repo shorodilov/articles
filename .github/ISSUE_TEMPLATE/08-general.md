@@ -30,3 +30,10 @@ This template is for:
 <!-- Any other information that might be helpful -->
 
 ---
+
+## Acknowledgement
+
+By submitting this issue, I acknowledge that:
+
+- I understand that issues are handled in a best-effort manner
+- I understand there are no commitments to fulfill this request

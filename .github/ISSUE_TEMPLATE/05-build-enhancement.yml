@@ -103,9 +103,9 @@ body:
       label: Acknowledgment
       description: Please confirm you understand the following
       options:
-        - label: I have searched existing issues for similar enhancement requests
+        - label: |
+            I understand that issues are handled in a best-effort manner
           required: true
-        - label: I understand this is reviewed and implemented on a best-effort basis
+        - label: |
+            I understand there are no commitments to fulfill this request
           required: true
-        - label: I am willing to contribute a PR for this enhancement if guided
-          required: false

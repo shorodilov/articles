@@ -42,8 +42,15 @@ Optional: What have you already attempted to find the answer?
 - etc.
 -->
 
-## Additional Information
+## Additional Context
 
-<!-- Any other information that might help answer your question -->
+<!-- Any other information that might be helpful -->
 
 ---
+
+## Acknowledgement
+
+By submitting this issue, I acknowledge that:
+
+- I understand that issues are handled in a best-effort manner
+- I understand there are no commitments to fulfill this request

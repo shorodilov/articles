@@ -87,7 +87,9 @@ body:
       label: Acknowledgment
       description: Please confirm you understand the following
       options:
-        - label: I have provided evidence or sources for this correction
+        - label: |
+            I understand that issues are handled in a best-effort manner
           required: true
-        - label: I understand corrections are reviewed on a best-effort basis
+        - label: |
+            I understand there are no commitments to fulfill this request
           required: true

@@ -69,7 +69,9 @@ body:
       label: Acknowledgment
       description: Please confirm you understand the following
       options:
-        - label: I understand this is a single-author repository and there are no commitments to fulfill this request
+        - label: |
+            I understand that issues are handled in a best-effort manner
           required: true
-        - label: I have searched existing issues and publications to avoid duplicates
+        - label: |
+            I understand there are no commitments to fulfill this request
           required: true

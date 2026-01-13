@@ -111,9 +111,11 @@ body:
     id: acknowledgment
     attributes:
       label: Acknowledgment
-      description: Please confirm you have done the following
+      description: Please confirm you understand the following
       options:
-        - label: I have searched existing issues for similar bugs
+        - label: |
+            I understand that issues are handled in a best-effort manner
           required: true
-        - label: I have provided steps to reproduce the bug
+        - label: |
+            I understand there are no commitments to fulfill this request
           required: true

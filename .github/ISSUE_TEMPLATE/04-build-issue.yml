@@ -94,13 +94,23 @@ body:
     validations:
       required: false
 
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (Optional)
+      description: Any other information that might be helpful
+    validations:
+      required: false
+
   - type: checkboxes
     id: acknowledgment
     attributes:
       label: Acknowledgment
-      description: Please confirm you have done the following
+      description: Please confirm you understand the following
       options:
-        - label: I have verified that required dependencies are installed
+        - label: |
+            I understand that issues are handled in a best-effort manner
           required: true
-        - label: I have searched existing issues for similar problems
+        - label: |
+            I understand there are no commitments to fulfill this request
           required: true
