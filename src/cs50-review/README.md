@@ -25,7 +25,7 @@ University from the perspective of a programming newbie.
 : Counter-arguments and alternative learning resources
 
 `src/cs50-review/section/99-conclusion.txt`
-: Summary and recommendations for target audience
+: Summary and recommendations for the target audience
 
 `src/cs50-review/refs.bib`
 : Bibliography with properly formatted BibTeX entries
@@ -34,6 +34,6 @@ University from the perspective of a programming newbie.
 : Repository documentation for the article
 
 `.editorconfig`
-: Extended markdown file pattern to include subdirectory READMEs
+: Extended Markdown file pattern to include subdirectory READMEs
 
 </details>
