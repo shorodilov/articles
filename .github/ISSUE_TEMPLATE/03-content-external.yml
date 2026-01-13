@@ -1,0 +1,87 @@
+name: 📚 Propose External Content Request
+description: Request inclusion or reference to external technical content from Git repositories
+title: "[External] "
+labels: [ "external", "content" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can request inclusion or reference to external technical content.
+        
+        > [!IMPORTANT]
+        > - Content must exist in a Git repository
+        > - Signed commits are preferred but optional
+        > - Content must be relevant to this repository's scope
+        > - Content license must be compatible with [LICENSE](/../main/LICENSE)
+
+  - type: input
+    id: content_name
+    attributes:
+      label: Content Name
+      description: Name or title of the external content
+      placeholder: e.g., "Advanced Rust Patterns Tutorial"
+    validations:
+      required: true
+
+  - type: input
+    id: repository
+    attributes:
+      label: Git Repository URL
+      description: Link to the Git repository containing the content
+      placeholder: https://github.com/username/repository
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: What license is the content under?
+      placeholder: e.g., MIT, CC-BY, CC0, Apache 2.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Content Description
+      description: Describe the external content
+      placeholder: |
+        - What topics does it cover?
+        - What makes it valuable?
+        - Who is the author?
+    validations:
+      required: false
+
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Relevance
+      description: Explain why this content is relevant to this repository
+      placeholder: |
+        - How does it fit with existing publications?
+        - What value does it add?
+        - Why should it be included?
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (Optional)
+      description: Any other information that might be helpful
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acknowledgment
+    attributes:
+      label: Acknowledgment
+      description: Please confirm you understand the following
+      options:
+        - label: |
+            I understand that issues are handled in a best-effort manner
+          required: true
+        - label: |
+            I understand there are no commitments to fulfill this request
+          required: true
