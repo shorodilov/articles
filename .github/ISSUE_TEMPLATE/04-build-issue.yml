@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Havin g trouble building publications? Please provide details so we can help.
+        Having trouble building publications? Please provide details so we can help.
 
   - type: dropdown
     id: issue_type
