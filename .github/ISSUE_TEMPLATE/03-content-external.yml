@@ -1,4 +1,4 @@
-name: 📚 External Content Request
+name: 📚 Propose External Content Request
 description: Request inclusion or reference to external technical content from Git repositories
 title: "[External] "
 labels: [ "external", "content" ]
@@ -8,11 +8,11 @@ body:
       value: |
         You can request inclusion or reference to external technical content.
         
-        **Requirements:**
-        - Content must exist in a Git repository
-        - Signed commits are preferred but optional
-        - Content must be relevant to this repository's scope
-        - Content license must be compatible with CC0
+        > ![IMPORTANT]
+        > - Content must exist in a Git repository
+        > - Signed commits are preferred but optional
+        > - Content must be relevant to this repository's scope
+        > - Content license must be compatible with [LICENSE](/../main/LICENSE)
 
   - type: input
     id: content_name
@@ -41,18 +41,6 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: signed_commits
-    attributes:
-      label: Signed Commits
-      description: Does the repository use signed commits?
-      options:
-        - "Yes"
-        - "No"
-        - "Not sure"
-    validations:
-      required: true
-
   - type: textarea
     id: description
     attributes:
@@ -63,7 +51,7 @@ body:
         - What makes it valuable?
         - Who is the author?
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: relevance
@@ -74,18 +62,6 @@ body:
         - How does it fit with existing publications?
         - What value does it add?
         - Why should it be included?
-    validations:
-      required: true
-
-  - type: dropdown
-    id: inclusion_type
-    attributes:
-      label: Type of Inclusion
-      description: How should this content be included?
-      options:
-        - Git submodule (include full content)
-        - Reference/link (cite without including)
-        - Either (let author decide)
     validations:
       required: true
 

@@ -13,7 +13,7 @@ body:
         - Templates
         - Build scripts
         - Configuration
-        - Automation
+        - CI/CD automation
 
   - type: dropdown
     id: component
@@ -26,6 +26,7 @@ body:
         - Build scripts
         - Configuration files
         - Documentation
+        - CI/CD Automation
         - Other
     validations:
       required: true
@@ -76,6 +77,7 @@ body:
         - Code snippets
         - Configuration changes
         - Dependencies needed
+        - etc.
     validations:
       required: false
 

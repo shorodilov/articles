@@ -8,7 +8,8 @@ body:
       value: |
         Report bugs in the repository infrastructure, build system, or scripts.
         
-        **Note:** For content errors in publications, use "Content Fix" instead.
+        > [!TIP]
+        > For content errors in publications, use "Fix Content" template instead.
 
   - type: dropdown
     id: component

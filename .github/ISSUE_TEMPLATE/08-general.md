@@ -5,14 +5,14 @@ about: For feedback, suggestions, or anything else not covered by other template
 
 > [!NOTE]
 > Please check if your issue fits one of the other templates:
-> - 🎯 Content Request - Request new content or publications
-> - ✏️ Content Fix - Report errors in publications
-> - 📚 External Content - Request external content inclusion
-> - 🔧 Build Issue - Problems building publications
-> - ⚙️ Build System Enhancement - Suggest build system improvements
-> - 🐛 Bug Report - Report bugs in infrastructure
-> - ❓ Question / Help - Ask questions or request help
-> - 🔒 Security - Report security issues (use Security Advisories)
+> - 🎯 Content Request - to propose new content publications
+> - ✏️ Fix Content - to report errors in publications
+> - 📚 Propose External Content - Request external content inclusion
+> - 🔧 Build System Issue - to report build issues and/or bugs
+> - ⚙️ Build System Enhancement - to suggest build system improvements
+> - 🐛 Bug Report - to report bugs in infrastructure
+> - ❓ Question / Help - to ask questions or request help
+> - 🔒 Security - to report security issues (use Security Advisories)
 
 ## Description
 

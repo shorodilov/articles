@@ -5,6 +5,10 @@ title: "[Question] "
 labels: [ "question" ]
 ---
 
+> [!NOTE]
+> Support is provided on a best-effort basis.
+> Please see [SUPPORT.md](../docs/SUPPORT.md) for response expectations.
+
 ## Question
 
 <!-- 
@@ -14,6 +18,7 @@ This can be about:
 - Technical topics covered in publications
 - How to use the build system
 - Understanding concepts in publications
+- etc.
 -->
 
 ## Context
@@ -23,6 +28,7 @@ Provide context for your question:
 - Which publication is this related to? (if applicable)
 - What have you already tried or researched?
 - What specific aspect are you having trouble with?
+- etc.
 -->
 
 ## What I've Tried
@@ -33,6 +39,7 @@ Optional: What have you already attempted to find the answer?
 - Searched existing issues
 - Read related publications
 - External resources consulted
+- etc.
 -->
 
 ## Additional Information
@@ -40,6 +47,3 @@ Optional: What have you already attempted to find the answer?
 <!-- Any other information that might help answer your question -->
 
 ---
-
-**Note:** Support is provided on a best-effort basis. Please see
-[SUPPORT.md](../docs/SUPPORT.md) for response expectations.
