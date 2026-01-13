@@ -1,6 +1,7 @@
 ---
 name: 💬 General / Other
-about: For feedback, suggestions, or anything else not covered by other templates
+about: |
+    For feedback, suggestions, or anything else not covered by other templates
 ---
 
 > [!NOTE]

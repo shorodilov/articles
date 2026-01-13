@@ -2,6 +2,7 @@ name: 🐛 Bug Report
 description: Report a bug in the build system, scripts, or repository infrastructure
 title: "[Bug] "
 labels: [ "bug" ]
+assignees: [ "shorodilov", "copilot" ]
 body:
   - type: markdown
     attributes:
@@ -45,10 +46,6 @@ body:
         1. Run command '...'
         2. Observe behavior '...'
         3. See error
-      value: |
-        1. 
-        2. 
-        3. 
     validations:
       required: true
 

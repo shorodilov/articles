@@ -2,6 +2,7 @@ name: 🎯 Content Request
 description: Request new content or publications on a specific technical topic
 title: "[Request] "
 labels: [ "content" ]
+assignees: [ "shorodilov" ]
 body:
   - type: markdown
     attributes:

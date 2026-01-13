@@ -3,6 +3,7 @@ name: ❓ Question / Help
 about: Ask a question or request help
 title: "[Question] "
 labels: [ "question" ]
+assignees: [ "shorodilov" ]
 ---
 
 > [!NOTE]

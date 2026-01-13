@@ -2,6 +2,7 @@ name: 🔧 Build System Issue
 description: Report problems building publications locally
 title: "[Build] "
 labels: [ "build_sys", "question" ]
+assignees: [ "shorodilov", "copilot" ]
 body:
   - type: markdown
     attributes:
