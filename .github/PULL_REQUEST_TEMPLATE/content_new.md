@@ -1,7 +1,7 @@
 ---
 name: "{pull_request_title}"
-about: |
-    New content proposal template
+about: Propose new content addition
+labels: [ "content" ]
 ---
 
 <!-- Provide changes abstract here (if applicable) -->

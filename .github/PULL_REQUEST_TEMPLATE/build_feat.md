@@ -1,7 +1,7 @@
 ---
 name: "{pull_request_title}"
-about: |
-    Build enhancement template
+about: Build system enhancement
+labels: [ "build_sys", "enhancement" ]
 ---
 
 <!-- Provide changes abstract here (if applicable) -->

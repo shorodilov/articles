@@ -1,7 +1,7 @@
 ---
 name: "{pull_request_title}"
-about: |
-    Build issue solution template
+about: Fix build system issue
+labels: [ "build_sys", "bug" ]
 ---
 
 <!-- Provide changes abstract here (if applicable) -->
@@ -14,13 +14,6 @@ about: |
 ## Description
 
 <!-- Details the changes made to resolve the build issue. -->
-
-## Impact
-
-<!--
-How does this change affect the build process? Performance?
-Or output structure?
--->
 
 ---
 

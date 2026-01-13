@@ -1,7 +1,7 @@
 ---
 name: "{pull_request_title}"
-about: |
-    Documentation expansion template
+about: Documentation expansion proposal
+labels: [ "documentation" ]
 ---
 
 <!-- Provide changes abstract here (if applicable) -->

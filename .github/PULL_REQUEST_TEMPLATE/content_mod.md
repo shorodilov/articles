@@ -1,7 +1,7 @@
 ---
 name: "{pull_request_title}"
-about: |
-    Content correction template
+about: Make corrections to the existing content
+labels: [ "content", "fix" ]
 ---
 
 <!-- Provide changes abstract here (if applicable) -->
