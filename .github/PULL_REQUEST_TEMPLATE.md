@@ -1,15 +1,16 @@
 > [!NOTE]
 > Pull request will be submitted using the default template.
 
+<!-- add "?template=<template>" to URL -->
 > [!TIP]
 > There are more specific templates available for you:
-> - [Build enhancement](?template=build_feat.md)
-> - [Build issue fixed](?template=build_issue.md)
-> - [Merge external content](?template=content_ext.md)
-> - [Content corrections](?template=content_mod.md)
+> - [Build feature](?template=build_sys_feature.md)
+> - [Build issue fixed](?template=build_sys_fix.md)
+> - [Merge external content](?template=content_external.md)
+> - [Content corrections](?template=content_modify.md)
 > - [New content](?template=content_new.md)
-> - [Documentation corrections](?template=docs_mod.md)
-> - [Documentation addition](?template=docs_new.md)
+> - [Documentation corrections](?template=documentation_modify.md)
+> - [Documentation addition](?template=documentation_new.md)
 
 ---
 
