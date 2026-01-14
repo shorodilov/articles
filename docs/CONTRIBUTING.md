@@ -299,8 +299,8 @@ When opening a pull request:
 ## Licensing
 
 > [!IMPORTANT]
-> **All contributions to this repository are released under the project's
-> [CC0 1.0 Universal][license] license.**
+> All contributions to this repository are released under the project's
+> [CC0 1.0 Universal][license] license.
 
 By contributing, you agree to dedicate your contributions to the public domain
 through CC0. This means:
