@@ -1,5 +1,10 @@
 # Requirements
 
+> [!IMPORTANT]
+>
+> This document describes the Proof fo Concepts for the repository structure.
+> It does not contain requirements, or any rules to follow.
+
 ## 1. Purpose and Scope
 
 ### 1.1 Primary Purpose
@@ -42,7 +47,6 @@ repo-root/
       metafile.yaml     # Publication-specific metadata (optional)
       README            # Publication description and notes (optional)
       <section-name>/   # Content sections (optional)
-        index           # Section entry point (optional)
         ...             # Section files
       assets/           # Images, code, data files (optional)
   templates/            # Shared pandoc templates
@@ -51,9 +55,9 @@ repo-root/
     ...
   csl/                  # Citation Style Language files (shared)
   docs/                 # Supporting documentation
-    REQUIREMENTS.md     # This document
     CODE_OF_CONDUCT.md  # Community code of conduct
     CONTRIBUTING.md     # Contribution guidelines
+    REQUIREMENTS.md     # This document
     SECURITY.md         # Security policy
     SUPPORT.md          # Support information
   Makefile              # Root build system
@@ -83,7 +87,6 @@ src/<publication-name>/
   metafile.yaml         # Publication-specific metadata (optional)
   README                # Publication description and notes (optional)
   <section-name>/       # Content sections (optional)
-    index               # Section entry point (optional)
     ...                 # Section files
   assets/               # Images, code, data files (optional)
 ```
