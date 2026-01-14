@@ -15,8 +15,7 @@ What problem does it solve or what gap does it fill?
 ## Impact
 
 <!--
-How does this change affect the build process, performance, or output
-structure?
+How does this change affect the build process, performance, output structure?
 -->
 
 ---

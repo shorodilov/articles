@@ -1,7 +1,7 @@
 # Contributing
 
-Thank you for your interest in contributing to this technical publications
-repository! This guide will help you understand how to contribute effectively.
+Thank you for your interest in contributing to this repository!
+This guide will help you understand how to contribute effectively.
 
 ## Welcome and Overview
 
@@ -162,7 +162,7 @@ process, Makefile, templates, scripts, or configuration files.
 
 - Which component would be affected
 - Description of current limitations
-- Detailed explanation of proposed improvement
+- Detailed explanation of the proposed improvement
 - Benefits (performance, new capability, simplified workflow, etc.)
 - Optional: Possible implementation approach or code snippets
 
@@ -261,7 +261,7 @@ Write clear, concise commit messages:
 
 - Use present tense ("Add feature" not "Added feature")
 - Use imperative mood ("Move cursor to..." not "Moves cursor to...")
-- Limit the first line to 72 characters or less
+- Limit the first line to 72 characters or fewer
 - Reference issues and pull requests where appropriate
 
 Examples:

@@ -3,7 +3,7 @@
 ## Overview
 
 Security is an important aspect of maintaining this repository. While
-this is a publications collection rather than a software project, we
+this is a publication collection rather than a software project, we
 are committed to addressing legitimate security concerns responsibly
 and appreciate the efforts of researchers and contributors who help
 identify potential issues.
