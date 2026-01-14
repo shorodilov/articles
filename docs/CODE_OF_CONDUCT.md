@@ -22,6 +22,31 @@ learning, teaching, or improving the content. When offering criticism,
 aim to be specific and actionable, recognizing the effort invested in
 creating and maintaining these materials.
 
+## Our Stance on the War in Ukraine
+
+The maintainer of this repository is Ukrainian and stands with Ukraine
+and the Ukrainian people in the ongoing war of aggression by the
+Russian Federation. This repository condemns this illegal invasion and
+the humanitarian crisis it has caused.
+
+While contributors from around the world are welcome, all community
+members must respect the values and dignity of the Ukrainian people.
+Pro-war rhetoric, denial of war crimes, or justification of aggression
+against Ukraine will not be tolerated in this repository's spaces.
+
+This community is built on principles of peace, human rights, and
+mutual respect. Those who cannot uphold these principles are not
+welcome here.
+
+### Support Ukraine
+
+If you wish to support Ukraine and its people, consider contributing to
+humanitarian efforts:
+
+- https://savelife.in.ua/en
+- https://prytulafoundation.org/en
+- https://www.sternenkofund.org/en
+
 ## Unacceptable Behavior
 
 This repository does not tolerate harassment, personal attacks,
@@ -30,17 +55,6 @@ off-topic solicitations, and disruptive conduct are not permitted.
 Intentional misrepresentation of facts, bad-faith arguments, or
 repeated disregard for feedback after warnings will result in
 enforcement action.
-
-### Specific Policy on the War in Ukraine
-
-The maintainer of this repository is Ukrainian. This repository does
-not tolerate propaganda, disinformation, or rhetoric that supports,
-justifies, or downplays military aggression against Ukraine. Content or
-interactions that glorify the aggressor, deny war crimes, or spread
-narratives aligned with hostile state propaganda are considered
-unacceptable and will result in immediate enforcement action without
-prior warning. This is a matter of personal safety and dignity, not a
-subject for debate.
 
 ## Scope
 
@@ -63,6 +77,6 @@ actions, though such explanations may be offered when appropriate.
 ## Contact
 
 To report a Code of Conduct violation, contact the maintainer directly
-via email at {EMAIL}. Reports will be handled with discretion to the
+via email at <EMAIL>. Reports will be handled with discretion to the
 extent possible. Please include relevant context, links, or screenshots
 to help assess the situation.
