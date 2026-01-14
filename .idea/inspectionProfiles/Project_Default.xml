@@ -47,7 +47,7 @@
       <scope name="JSON schemas" level="ERROR" enabled="false" />
     </inspection_tool>
     <inspection_tool class="MarkdownUnresolvedFileReference" enabled="true" level="WARNING" enabled_by_default="true">
-      <scope name="Issue and PR templates" level="WARNING" enabled="false" />
+      <scope name="community health files" level="TEXT ATTRIBUTES" enabled="true" editorAttributes="CONSIDERATION_ATTRIBUTES" />
     </inspection_tool>
   </profile>
 </component>
