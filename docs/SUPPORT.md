@@ -26,7 +26,7 @@ Before opening an issue or reaching out, please check these resources:
   in the repository
 
 [readme]: ../README.md
-[contributing]: CONTRIBUTING.md
+[contributing]: /../main/docs/CONTRIBUTING.md
 
 ## Support Channels
 
@@ -35,17 +35,13 @@ Before opening an issue or reaching out, please check these resources:
 GitHub Issues are the primary channel for questions, help requests, and
 discussions. Use the following templates:
 
-- **[Question / Help][question-template]** — For questions about repository
-  content, technical topics covered in publications, or how to use the build
-  system
-- **[General / Other][general-template]** — For feedback, suggestions, or
-  anything else not covered by other templates
+- **Question / Help** — For questions about repository content, technical
+  topics covered in publications, or how to use the build system
+- **General / Other** — For feedback, suggestions, or anything else not
+  covered by other templates
 
 Please note that GitHub Issues are public. Do not share sensitive or private
 information through this channel.
-
-[question-template]: ../.github/ISSUE_TEMPLATE/07-question.md
-[general-template]: ../.github/ISSUE_TEMPLATE/08-general.md
 
 ### Email
 
@@ -59,7 +55,7 @@ via email at {EMAIL}. Use email only when:
 Please continue to use GitHub Issues for general questions and discussions
 to benefit the broader community.
 
-[code-of-conduct]: CODE_OF_CONDUCT.md
+[code-of-conduct]: /../main/docs/CODE_OF_CONDUCT.md
 
 ## What to Expect
 
@@ -96,4 +92,4 @@ reporting procedures.
 
 Security matters must be handled privately to protect users.
 
-[security]: SECURITY.md
+[security]: /../main/docs/SECURITY.md
