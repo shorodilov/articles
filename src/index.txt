@@ -1,5 +1,26 @@
-:version: 0.1-dev0
-:abstract: |
-  This is the abstract of the article. It should provide a concise summary
-  of the article's content, main arguments, methodology, and findings.
-  The abstract should be between 150-250 words.
+:version: 1.0-rc1
+
+********
+Введення
+********
+
+Вітаю.
+
+Отже, ви давно бажаєте підкорити собі якусь мову програмування та доєднатися
+до IT-спільноти, але не маєте жодних зачіпок із чого почати? Тоді ви опинились
+у правильному місці, і я допоможу вам. У цій статті я надам поради, як подолати
+найперші кроки.
+
+Я всіма силами намагався зробити цей текст узгодженим, але тема доволі широка.
+Отже, подекуди мені доведеться звужувати обхват та фокусуватися на конкретних
+питаннях.
+
+А тому, якщо вам здається, що якісь частини не стикуються - цілком можливо, що
+вам не здається. У таких випадках я раджу повернутися сюди, так прочитати
+
+.. include:: section/00-disclaimer.txt
+.. include:: section/10-motivation.txt
+.. include:: section/20-preparation.txt
+.. include:: section/30-learning-path.txt
+.. include:: section/40-experience.txt
+.. include:: section/99-conclusion.txt
