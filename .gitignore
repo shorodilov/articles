@@ -5,5 +5,8 @@
 ### IDE configuration template
 /.vscode/
 /.settings/
-/.idea/
+/.idea/*
 /.project
+# add shared scopes and inspection profiles
+!/.idea/scopes/
+!/.idea/inspectionProfiles/
