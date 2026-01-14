@@ -11,7 +11,7 @@ including content suggestions, error corrections, external content proposals,
 and improvements to the repository infrastructure.
 
 Before participating, please read and follow our
-[Code of Conduct](/../main/docs/CODE_OF_CONDUCT.md).
+[Code of Conduct][code-of-conduct].
 
 **Important:** This is a single-author repository maintained in spare time.
 While all contributions are appreciated, there are no commitments or
@@ -196,7 +196,7 @@ content errors in publications, use the "Content Fix" pathway instead.
 technical topics covered in publications, or need help understanding concepts.
 
 **Note:** Support is provided on a best-effort basis. For detailed support
-information, see [SUPPORT.md](/../main/docs/SUPPORT.md).
+information, see [SUPPORT.md][support].
 
 **How to contribute:**
 
@@ -298,8 +298,9 @@ When opening a pull request:
 
 ## Licensing
 
-**All contributions to this repository are released under the project's
-[CC0 1.0 Universal][license] license.**
+> [!IMPORTANT]
+> **All contributions to this repository are released under the project's
+> [CC0 1.0 Universal][license] license.**
 
 By contributing, you agree to dedicate your contributions to the public domain
 through CC0. This means:
@@ -317,7 +318,7 @@ that its license is compatible with CC0.
 ## Getting Help
 
 If you need assistance or have questions about contributing, please see
-[SUPPORT.md](/../main/docs/SUPPORT.md) for:
+[SUPPORT.md][support] for:
 
 - Support expectations and response times
 - Available support channels
@@ -330,3 +331,5 @@ quality and accessibility of technical knowledge.
 [readme]: /../main/README.md
 [license]: /../main/LICENSE
 [editorconfig]: /../main/.editorconfig
+[code-of-conduct]: /../main/docs/CODE_OF_CONDUCT.md
+[support]: /../main/docs/SUPPORT.md

@@ -36,7 +36,7 @@ enforcement action.
 The maintainer of this repository is Ukrainian. This repository does
 not tolerate propaganda, disinformation, or rhetoric that supports,
 justifies, or downplays military aggression against Ukraine. Content or
-interactions that glorify the aggressor, deny war crimes, or spread
+interactions that glorify Russia (the aggressor state), deny war crimes, or spread
 narratives aligned with hostile state propaganda are considered
 unacceptable and will result in immediate enforcement action without
 prior warning. This is a matter of personal safety and dignity, not a
@@ -63,6 +63,6 @@ actions, though such explanations may be offered when appropriate.
 ## Contact
 
 To report a Code of Conduct violation, contact the maintainer directly
-via email at {EMAIL}. Reports will be handled with discretion to the
+via email at <EMAIL>. Reports will be handled with discretion to the
 extent possible. Please include relevant context, links, or screenshots
 to help assess the situation.
