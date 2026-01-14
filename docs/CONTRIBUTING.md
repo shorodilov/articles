@@ -40,7 +40,7 @@ Before submitting a contribution, please:
 Choose the appropriate pathway for your contribution. Each pathway has a
 corresponding issue template to guide you through the process.
 
-### 3.1. Content Request
+### Content Request
 
 **Use this pathway when:** You want to suggest a new publication topic or
 request coverage of a specific technical subject.
@@ -62,7 +62,7 @@ request coverage of a specific technical subject.
 **Note:** Content requests are evaluated based on relevance, feasibility, and
 author expertise. There are no commitments to create requested content.
 
-### 3.2. Content Fix
+### Content Fix
 
 **Use this pathway when:** You've found errors, inaccuracies, or
 misinformation in existing publications.
@@ -90,7 +90,7 @@ information):
 - Proposed correction with supporting evidence
 - Links to authoritative sources or documentation
 
-### 3.3. External Content
+### External Content
 
 **Use this pathway when:** You want to propose inclusion or reference to
 external technical content from Git repositories.
@@ -117,7 +117,7 @@ external technical content from Git repositories.
 - Description of topics covered and author information
 - Explanation of why it's relevant and valuable
 
-### 3.4. Build System Issue
+### Build System Issue
 
 **Use this pathway when:** You encounter problems building publications
 locally.
@@ -146,7 +146,7 @@ like make, pandoc, and LaTeX for document generation. Refer to
   - LaTeX distribution (if applicable)
 - Steps you've already tried to resolve the issue
 
-### 3.5. Build System Enhancement
+### Build System Enhancement
 
 **Use this pathway when:** You want to suggest improvements to the build
 process, Makefile, templates, scripts, or configuration files.
@@ -166,7 +166,7 @@ process, Makefile, templates, scripts, or configuration files.
 - Benefits (performance, new capability, simplified workflow, etc.)
 - Optional: Possible implementation approach or code snippets
 
-### 3.6. Bug Report
+### Bug Report
 
 **Use this pathway when:** You've found bugs in repository infrastructure,
 build scripts, or other non-content components.
@@ -190,7 +190,7 @@ content errors in publications, use the "Content Fix" pathway instead.
 - Environment information (if relevant)
 - Logs or error output
 
-### 3.7. Question / Help
+### Question / Help
 
 **Use this pathway when:** You have questions about repository content,
 technical topics covered in publications, or need help understanding concepts.
@@ -212,7 +212,7 @@ information, see [SUPPORT.md][support].
 - Context about what you're trying to understand or accomplish
 - What you've already researched or attempted
 
-### 3.8. General / Other
+### General / Other
 
 **Use this pathway when:** You have feedback, suggestions, or want to discuss
 something that doesn't fit into other categories.
