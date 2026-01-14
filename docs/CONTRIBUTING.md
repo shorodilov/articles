@@ -1,4 +1,4 @@
-# Contributing to Publications
+# Contributing
 
 Thank you for your interest in contributing to this technical publications
 repository! This guide will help you understand how to contribute effectively.
@@ -11,7 +11,7 @@ including content suggestions, error corrections, external content proposals,
 and improvements to the repository infrastructure.
 
 Before participating, please read and follow our
-[Code of Conduct](CODE_OF_CONDUCT.md).
+[Code of Conduct](/../main/docs/CODE_OF_CONDUCT.md).
 
 **Important:** This is a single-author repository maintained in spare time.
 While all contributions are appreciated, there are no commitments or
@@ -196,7 +196,7 @@ content errors in publications, use the "Content Fix" pathway instead.
 technical topics covered in publications, or need help understanding concepts.
 
 **Note:** Support is provided on a best-effort basis. For detailed support
-information, see [SUPPORT.md](SUPPORT.md).
+information, see [SUPPORT.md](/../main/docs/SUPPORT.md).
 
 **How to contribute:**
 
@@ -317,7 +317,7 @@ that its license is compatible with CC0.
 ## Getting Help
 
 If you need assistance or have questions about contributing, please see
-[SUPPORT.md](SUPPORT.md) for:
+[SUPPORT.md](/../main/docs/SUPPORT.md) for:
 
 - Support expectations and response times
 - Available support channels
@@ -327,6 +327,6 @@ If you need assistance or have questions about contributing, please see
 Thank you for contributing to this project! Your efforts help improve the
 quality and accessibility of technical knowledge.
 
-[readme]: ../README.md
-[license]: ../LICENSE
-[editorconfig]: ../.editorconfig
+[readme]: /../main/README.md
+[license]: /../main/LICENSE
+[editorconfig]: /../main/.editorconfig
