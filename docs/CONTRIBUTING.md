@@ -104,7 +104,7 @@ external technical content from Git repositories.
 
 **How to contribute:**
 
-1. Open a new issue using the "📚 Propose External Content Request" template
+1. Open a new issue using the "📚 External Content" template
 2. Provide the content name and Git repository URL
 3. Specify the content's license
 4. Explain the content and its relevance to this repository
@@ -124,14 +124,14 @@ locally.
 
 **Note:** While the README indicates this repository is not primarily a
 software project with a build system, some publications may use build tools
-like Make, pandoc, and LaTeX for document generation. Refer to
+like make, pandoc, and LaTeX for document generation. Refer to
 [README.md][readme] for detailed setup instructions if available.
 
 **How to contribute:**
 
 1. Open a new issue using the "🔧 Build System Issue" template
-2. Describe the issue type (build fails, incorrect output, configuration
-   issue, missing dependency, etc.)
+2. Describe the issue type (build fails, incorrect output, configuration issue,
+   missing dependency, etc.)
 3. Provide the command you ran and the complete error message
 4. Include your environment information
 
