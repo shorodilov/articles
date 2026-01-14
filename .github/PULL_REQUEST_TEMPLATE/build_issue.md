@@ -18,7 +18,7 @@ By submitting this pull request, I confirm that:
 - I agree to release this work under the project's [LICENSE](/../main/LICENSE).
 - I have read and agreed to
   the [Contributing Guide](/../main/docs/CONTRIBUTING.md)
-  and [Code of Conduct](/..main/docs/CODE_OF_CONDUCT.md).
+  and [Code of Conduct](/../main/docs/CODE_OF_CONDUCT.md).
 
 ---
 <!--
