@@ -328,8 +328,8 @@ If you need assistance or have questions about contributing, please see
 Thank you for contributing to this project! Your efforts help improve the
 quality and accessibility of technical knowledge.
 
-[readme]: /../main/README.md
-[license]: /../main/LICENSE
-[editorconfig]: /../main/.editorconfig
-[code-of-conduct]: /../main/docs/CODE_OF_CONDUCT.md
-[support]: /../main/docs/SUPPORT.md
+[readme]: ../README.md
+[license]: ../LICENSE
+[editorconfig]: ../.editorconfig
+[code-of-conduct]: CODE_OF_CONDUCT.md
+[support]: SUPPORT.md
