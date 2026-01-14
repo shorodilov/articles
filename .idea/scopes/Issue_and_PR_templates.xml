@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Issue and PR templates" pattern="file:.github/PULL_REQUEST_TEMPLATE.md||file[Publications]:.github/PULL_REQUEST_TEMPLATE//*||file[Publications]:.github/ISSUE_TEMPLATE//*" />
+</component>
