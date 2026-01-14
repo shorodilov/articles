@@ -242,8 +242,8 @@ Individual publications may include a `README` file at
 - Links to related resources
 
 > [!NOTE]
-> Publication READMEs are optional and at the author's discretion. 
-> They can be in any plain text format (Markdown recommended for 
+> Publication READMEs are optional and at the author's discretion.
+> They can be in any plain text format (Markdown recommended for
 > readability on GitHub).
 
 ## 4. Version Control
