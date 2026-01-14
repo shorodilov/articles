@@ -1,15 +1,13 @@
-# Requirements
-
 > [!IMPORTANT]
 >
-> This document describes the Proof fo Concepts for the repository structure.
-> It does not contain requirements, or any rules to follow.
+> This document describes the Proof of Concepts for the repository structure.
+> It does not contain requirements or any rules to follow.
 
 ## 1. Purpose and Scope
 
 ### 1.1 Primary Purpose
 
-- Primary storage for technical publications authored by the repository owner
+- Primary storage for publications authored by the repository owner
 - Maintain an archive of articles and associated code snippets
 - Facilitate easy reference and sharing of published work
 
@@ -21,7 +19,7 @@
     - Blog posts
     - Tutorials
     - Code snippets and examples
-    - Any other written technical content
+    - Any other written content
 
 ### 1.3 Out of Scope
 
@@ -55,12 +53,13 @@ repo-root/
     ...
   csl/                  # Citation Style Language files (shared)
   docs/                 # Supporting documentation
+    PROOF_OF_CONCEPT.md # This document
     CODE_OF_CONDUCT.md  # Community code of conduct
     CONTRIBUTING.md     # Contribution guidelines
-    REQUIREMENTS.md     # This document
     SECURITY.md         # Security policy
     SUPPORT.md          # Support information
   Makefile              # Root build system
+  Taskfile.yml          # Alternative build system
   dist/                 # Build outputs (default, gitignored)
   README.md
   LICENSE
@@ -75,6 +74,7 @@ repo-root/
 - The output directory (`dist/` by default) and its common alternatives are
   excluded from version control
 - Each publication must have an `index` file as its main entry point
+- Community health files are stored in `docs/` for better organization
 
 #### 2.1.2 Publication Structure
 
@@ -140,7 +140,7 @@ src/<publication-name>/
     - Use the most appropriate plain text format extension (`.rst`, `.md`,
       `.txt`, etc.)
     - File extensions identify the format but are not prescribed
-    - No strict convention – author's discretion
+    - No strict convention - author's discretion
 - **Directories**:
     - `<section-name>/` - for organizing multi-part content (optional)
         - Use descriptive names (e.g., `introduction/`, `methodology/`,
@@ -174,7 +174,7 @@ publication types and source formats.
     - No format conversion required – use source formats directly
 
 **Philosophy**: The repository is truly format-agnostic. While reStructuredText
-is preferred for new content, any lain text format is acceptable. Pandoc
+is preferred for new content, any plain text format is acceptable. Pandoc
 handles all conversions transparently.
 
 #### 2.2.3 Format Transformation
@@ -203,16 +203,16 @@ The main README.md should include:
 **Required sections**:
 
 - **Title and description**: Brief overview of repository purpose
-    - "A collection of technical publications primarily authored by [author]"
+    - "A collection of publications primarily authored by [author]"
     - Explain the single-repository approach
 - **Quick start**: How to build publications
     - Prerequisites (pandoc, make, etc.)
     - Basic build commands (`make all`, `make <publication>`)
     - Example: `make article-01`
 - **Repository structure**: Brief overview of directories
-    - Explain `src/`, `templates/`, `references/`, etc.
+    - Explain `src/`, `templates/`, `csl/`, `docs/`, etc.
     - Note that `dist/` is gitignored
-- **Contributing**: Link to CONTRIBUTING.md or brief guidelines
+- **Contributing**: Link to `docs/CONTRIBUTING.md` or brief guidelines
     - How to report errors
     - How to request publications
 - **License**: Reference to CC0 license
@@ -241,9 +241,10 @@ Individual publications may include a `README` file at
 - Publication-specific notes
 - Links to related resources
 
-**Note**: Publication READMEs are optional and at the author's discretion.
-They can be in any plain text format (Markdown recommended for readability on
-GitHub).
+> [!NOTE]
+> Publication READMEs are optional and at the author's discretion. 
+> They can be in any plain text format (Markdown recommended for 
+> readability on GitHub).
 
 ## 4. Version Control
 
@@ -326,8 +327,6 @@ GitHub).
 
 ## 6. Licensing
 
-See [LICENSE](../LICENSE) for full details.
-
 ### 6.1 Content License
 
 - CC0 1.0 Universal (public domain)
@@ -355,39 +354,183 @@ See [LICENSE](../LICENSE) for full details.
 
 - Use GitHub Issues to request publications or report errors
 - Discussion required before any content changes
+- See `docs/CONTRIBUTING.md` for detailed guidelines
 
 ## 8. Build and Deployment
 
-### 8.1 Build System
+### 8.1 Build System Overview
 
-#### 8.1.1 Makefile Structure
+#### 8.1.1 General Concepts
 
-- **Single root Makefile** at repository root
+The repository uses a build system to transform source publications into
+various output formats:
+
+- **Automatic discovery**: A build system discovers publications from `src/`
+  directory
+- **Configurable output**: Output directory is configurable (default: `dist/`)
+- **Multiple formats**: Generate PDF, HTML, and other formats via pandoc
+- **Single file or parallel**: Build all publications or specific ones
+
+Two build system implementations are available: Make and Task.
+
+#### 8.1.2 Feature Comparison
+
+| Feature                    | Make                                                | Task                                   |
+|----------------------------|-----------------------------------------------------|----------------------------------------|
+| **Configuration format**   | Makefile (special syntax)                           | YAML (human-readable)                  |
+| **Installation**           | Pre-installed on most Unix systems                  | Requires separate installation         |
+| **Cross-platform**         | Limited (native on Unix, requires ports on Windows) | Native support (Windows, Linux, macOS) |
+| **Variable interpolation** | Basic (shell-based)                                 | Advanced (built-in templating)         |
+| **Dependency management**  | File timestamp-based                                | Built-in dependency resolution         |
+| **Syntax complexity**      | Requires tabs, special escaping                     | Straightforward YAML                   |
+| **Maturity**               | Industry standard for decades                       | Modern (2017+)                         |
+| **Learning curve**         | Steeper (special syntax)                            | Gentler (familiar YAML)                |
+| **Ecosystem**              | Ubiquitous                                          | Growing                                |
+
+Both implementations provide the same functionality and can coexist in the
+repository.
+
+### 8.2 Make Implementation
+
+#### 8.2.1 Makefile Structure
+
+- Single root `Makefile` at repository root
 - No per-publication Makefiles needed
 - No Makefile generation required
 
-#### 8.1.2 Build Targets
+#### 8.2.2 Build Targets
 
 - `make all`: Build all publications in `src/`
 - `make <publication-name>`: Build specific publication
     - Example: `make article-01` builds only `src/article-01/`
     - Publication name matches directory name in `src/`
+- `make clean`: Remove build outputs
+- `make validate`: Run source file validation
 
-#### 8.1.3 Build Process
+#### 8.2.3 Usage Examples
 
-- Makefile discovers publications automatically from `src/` directory
-- Uses `pandoc` for format transformations
-- Applies shared templates and metadata from `src/metafile.yaml`
-- Merges publication-specific metadata from `src/<publication>/metafile.yaml`
-- Combines references from `src/refs.bib` and `src/<publication>/refs.bib`
-- Applies frontmatter overrides as the final step
+```bash
+# Build all publications
+make all
 
-### 8.2 Output Generation
+# Build specific publication
+make article-01
+
+# Build with custom output directory
+make OUTPUT_DIR=public all
+
+# Clean build outputs
+make clean
+
+# Validate source files
+make validate
+```
+
+### 8.3 Task Implementation
+
+#### 8.3.1 Taskfile Structure
+
+Create a `Taskfile.yml` at repository root:
+
+```yaml
+version: '3'
+
+vars:
+    OUTPUT_DIR: '{{.OUTPUT_DIR | default "dist"}}'
+    SRC_DIR: src
+
+tasks:
+    default:
+        desc: List available tasks
+        cmds:
+            - task --list
+
+    all:
+        desc: Build all publications
+        cmds:
+            -   task: build-publication
+                for:
+                    var: PUBLICATIONS
+                vars:
+                    PUBLICATION: '{{.ITEM}}'
+        vars:
+            PUBLICATIONS:
+                sh: ls -1 {{.SRC_DIR}}
+
+    build-publication:
+        desc: Build a specific publication
+        summary: |
+            Build a single publication by name.
+            Usage: task build-publication PUBLICATION=article-01
+        cmds:
+            - mkdir -p {{.OUTPUT_DIR}}/{{.PUBLICATION}}
+            - pandoc {{.SRC_DIR}}/{{.PUBLICATION}}/index.* -o {{.OUTPUT_DIR}}/{{.PUBLICATION}}/output.pdf
+        requires:
+            vars: [ PUBLICATION ]
+
+    clean:
+        desc: Remove build outputs
+        cmds:
+            - rm -rf {{.OUTPUT_DIR}}
+
+    validate:
+        desc: Validate source files
+        cmds:
+            - echo "Running validation..."
+            # Add validation commands here
+```
+
+#### 8.3.2 Build Tasks
+
+- `task all`: Build all publications in `src/`
+- `task build-publication PUBLICATION=<name>`: Build specific publication
+    - Example: `task build-publication PUBLICATION=article-01`
+- `task clean`: Remove build outputs
+- `task validate`: Run source file validation
+
+#### 8.3.3 Usage Examples
+
+```bash
+# List available tasks
+task
+
+# Build all publications
+task all
+
+# Build specific publication
+task build-publication PUBLICATION=article-01
+
+# Build with custom output directory
+OUTPUT_DIR=public task all
+
+# Clean build outputs
+task clean
+
+# Validate source files
+task validate
+```
+
+### 8.4 Build Process
+
+Regardless of the build system used, the build process follows these steps:
+
+1. Discover publications automatically from `src/` directory
+2. Use `pandoc` for format transformations
+3. Apply shared templates and metadata from `src/metafile.yaml`
+4. Merge publication-specific metadata from `src/<publication>/metafile.yaml`
+5. Combine references from `src/refs.bib` and `src/<publication>/refs.bib`
+6. Apply frontmatter overrides as final step
+7. Generate output in configured directory structure
+
+### 8.5 Output Generation
 
 - **Transformation tool**: pandoc
 - **Output location**: Configurable output directory
     - Default: `dist/`
-    - Override: `make OUTPUT_DIR=<path> all`
+    - Override via environment variable or build system parameter
+    - Examples:
+        - Make: `make OUTPUT_DIR=public all`
+        - Task: `OUTPUT_DIR=public task all`
 - **Output structure**: `<output-dir>/<publication-name>/<format>/`
     - Example: `dist/article-01/pdf/`, `dist/article-01/html/`
 - **Supported formats**:
@@ -395,7 +538,7 @@ See [LICENSE](../LICENSE) for full details.
     - HTML
     - Other formats as needed
 
-### 8.3 Build Artifacts
+### 8.6 Build Artifacts
 
 - **Not tracked in git**: Build outputs are excluded from version control
 - **`.gitignore` entries**: Common output directory names
@@ -405,9 +548,9 @@ See [LICENSE](../LICENSE) for full details.
     - `out/`
     - Any other configured output directories
 
-### 8.4 Error Handling
+### 8.7 Error Handling
 
-#### 8.4.1 Error Reporting
+#### 8.7.1 Error Reporting
 
 - **Clear error messages**: When builds fail, display informative messages
     - Example: "Failed to build article-01: pandoc returned error code 1"
@@ -424,7 +567,7 @@ See [LICENSE](../LICENSE) for full details.
 
 - **Pre-build checks**:
     - Verify source files exist before building
-    - Check for required dependencies (pandoc, make)
+    - Check for required dependencies (pandoc, build system tool)
     - Display helpful "command not found" messages with installation hints
     - Warn about missing optional dependencies
 
@@ -433,7 +576,7 @@ See [LICENSE](../LICENSE) for full details.
     - Non-zero for failed builds
     - Allows CI/CD and build tools to detect failures
 
-#### 8.4.2 Error Handling Scope
+#### 8.7.2 Error Handling Scope
 
 - **Simple error reporting only** (no complex logic)
 - No retry mechanisms
@@ -442,7 +585,7 @@ See [LICENSE](../LICENSE) for full details.
 - No partial build states
 - Focus on clear diagnostics and helpful messages
 
-### 8.5 Publishing Workflow
+### 8.8 Publishing Workflow
 
 - No automated publishing to external platforms
 - Generated outputs stored in a configured output directory
@@ -456,11 +599,11 @@ See [LICENSE](../LICENSE) for full details.
 
 - **make**: GNU Make 4.0 or higher
     - Build system and task automation
-
+- **Task**: Version 3.x or higher
+    - Modern task runner and build system
 - **pandoc**: Version 2.x or higher (3.x recommended)
     - Format transformation engine
     - Universal document converter
-
 - **git**: Version 2.x or higher
     - Version control system
     - Repository hosted on GitHub
@@ -527,8 +670,8 @@ See [LICENSE](../LICENSE) for full details.
 
 ## Summary
 
-This requirements document defines a format-agnostic publication repository
-with the following key characteristics:
+This document defines a format-agnostic publication repository with the
+following key characteristics:
 
 **Core Philosophy**:
 
@@ -546,8 +689,3 @@ with the following key characteristics:
 - ✓ Git-based versioning with a simplified branching strategy
 - ✓ Optional validation/linting with clear error messages
 - ✓ CC0 license for all content
-
-**Implementation Ready**:
-All core requirements are defined and ready for implementation. The repository
-structure, build system design, and workflows are clearly specified in this
-document.
