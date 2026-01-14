@@ -6,14 +6,14 @@ about: |
 
 > [!NOTE]
 > Please check if your issue fits one of the other templates:
-> - 🎯 Content Request - to propose new content publications
-> - ✏️ Fix Content - to report errors in publications
-> - 📚 Propose External Content - Request external content inclusion
-> - 🔧 Build System Issue - to report build issues and/or bugs
-> - ⚙️ Build System Enhancement - to suggest build system improvements
-> - 🐛 Bug Report - to report bugs in infrastructure
-> - ❓ Question / Help - to ask questions or request help
-> - 🔒 Security - to report security issues (use Security Advisories)
+> - 🎯 Content Request: to propose new content publications
+> - ✏️ Fix Content: to report errors in publications
+> - 📚 Propose External Content: to request external content inclusion
+> - 🔧 Build System Issue: to report build issues and/or bugs
+> - ⚙️ Build System Enhancement: to suggest build system improvements
+> - 🐛 Bug Report: to report bugs in infrastructure
+> - ❓ Question / Help: to ask questions or request help
+> - 🔒 Security: to report security issues (use Security Advisories)
 
 ## Description
 
