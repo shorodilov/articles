@@ -94,7 +94,7 @@ tasks:
     desc: Validate source files (placeholder)
     cmds:
       - echo "Validation not yet implemented"
-      - echo "Source directory: {{.SRC_DIR}}/"
+      - echo "Source directory{{":"}} {{.SRC_DIR}}/"
       - |
         if [ -d "{{.SRC_DIR}}" ]; then
           PUBLICATIONS=$(ls -1 {{.SRC_DIR}} 2>/dev/null || echo "")
