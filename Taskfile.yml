@@ -72,8 +72,8 @@ tasks:
         pandoc "$INDEX_FILE" \
           -o {{.OUTPUT_DIR}}/{{.PUBLICATION}}/output.pdf \
           --standalone \
-          $BIBLIOGRAPHY_ARG \
-          $METADATA_ARG \
+          ${BIBLIOGRAPHY_ARG:+$BIBLIOGRAPHY_ARG} \
+          ${METADATA_ARG:+$METADATA_ARG} \
           || { echo "Error: Build failed for {{.PUBLICATION}}"; exit 1; }
         
         echo "Success: Built {{.PUBLICATION}} -> {{.OUTPUT_DIR}}/{{.PUBLICATION}}/output.pdf"
