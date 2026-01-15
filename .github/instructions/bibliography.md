@@ -42,13 +42,13 @@ When duplicates found:
 
 ### Required Fields by Type
 
-| Type       | Required Fields                    |
-|------------|-----------------------------------|
-| @article   | author, title, journal, year      |
-| @book      | author OR editor, title, publisher, year |
-| @online    | author OR title, url, urldate     |
-| @inproceedings | author, title, booktitle, year |
-| @misc      | author OR title, year             |
+| Type           | Required Fields                          |
+|----------------|------------------------------------------|
+| @article       | author, title, journal, year             |
+| @book          | author OR editor, title, publisher, year |
+| @online        | author OR title, url, urldate            |
+| @inproceedings | author, title, booktitle, year           |
+| @misc          | author OR title, year                    |
 
 ### Optional but Recommended
 

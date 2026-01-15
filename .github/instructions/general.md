@@ -8,8 +8,8 @@ written content. Single-author, best-effort maintenance model.
 ## Core Principles
 
 1. **Simplicity over complexity** — Prefer straightforward solutions. No
-   elaborate error handling or over-engineered abstractions. Clear logging
-   and helpful messages are sufficient.
+   elaborate error handling or overengineered abstractions. Clear logging
+   and helpful messages are enough.
 
 2. **Format flexibility** — Accept any plain text format. reStructuredText
    is primary, Markdown and plain text are equally valid.

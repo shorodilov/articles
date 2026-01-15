@@ -59,7 +59,7 @@ Check `.. include::` directives:
 
 - Citation keys in text must exist in `refs.bib`
 - Check both publication-specific and shared (`src/refs.bib`) references
-- Format: `:cite:`key`` or `[@key]` depending on format
+- Format: `:cite:'key'` or `[@key]` depending on format
 
 ## Metadata Validation
 

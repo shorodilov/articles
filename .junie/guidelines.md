@@ -47,8 +47,6 @@ clean:
 
 ### Error Handling
 
-Per PROOF_OF_CONCEPT.md section 8.4:
-
 - Clear error messages with context
 - Color-coded output if terminal supports it
 - Pre-build checks for dependencies

@@ -74,9 +74,9 @@ When working with `refs.bib` files:
 
 - Check for duplicate citation keys (within file and across shared refs)
 - Verify required fields per entry type:
-  - `@article`: author, title, journal, year
-  - `@book`: author/editor, title, publisher, year
-  - `@online`: author/title, url, urldate
+    - `@article`: author, title, journal, year
+    - `@book`: author/editor, title, publisher, year
+    - `@online`: author/title, url, urldate
 - Use consistent key naming (e.g., `author:year` or `source:topic`)
 
 ## Pull Request Review
