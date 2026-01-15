@@ -1,0 +1,109 @@
+version: '3'
+
+vars:
+  OUTPUT_DIR: '{{.OUTPUT_DIR | default "dist"}}'
+  SRC_DIR: '{{.SRC_DIR | default "src"}}'
+
+tasks:
+  default:
+    desc: List available tasks
+    cmds:
+      - task --list
+
+  all:
+    desc: Build all publications
+    cmds:
+      - for: { var: PUBLICATIONS, split: "\n" }
+        task: build-publication
+        vars:
+          PUBLICATION: '{{.ITEM}}'
+    vars:
+      PUBLICATIONS:
+        sh: ls -1 {{.SRC_DIR}} 2>/dev/null || echo ""
+
+  build-publication:
+    desc: Build a specific publication
+    summary: |
+      Build a single publication by name.
+
+      Usage: task build-publication PUBLICATION=article-name
+
+      The publication must exist as a directory under src/ with an index file.
+    cmds:
+      - |
+        if [ ! -d "{{.SRC_DIR}}/{{.PUBLICATION}}" ]; then
+          echo "Error: Publication '{{.PUBLICATION}}' not found in {{.SRC_DIR}}/"
+          exit 1
+        fi
+      - mkdir -p {{.OUTPUT_DIR}}/{{.PUBLICATION}}
+      - |
+        INDEX_FILE=$(ls {{.SRC_DIR}}/{{.PUBLICATION}}/index.* 2>/dev/null | head -1)
+        if [ -z "$INDEX_FILE" ]; then
+          echo "Error: No index file found in {{.SRC_DIR}}/{{.PUBLICATION}}/"
+          exit 1
+        fi
+        echo "Building: {{.PUBLICATION}} from $INDEX_FILE"
+        
+        # Check if pandoc is available
+        if ! command -v pandoc >/dev/null 2>&1; then
+          echo "Error: pandoc is not installed"
+          echo "Please install pandoc: https://pandoc.org/installing.html"
+          exit 1
+        fi
+        
+        # Build bibliography argument
+        BIBLIOGRAPHY_ARG=""
+        if [ -f "{{.SRC_DIR}}/{{.PUBLICATION}}/refs.bib" ]; then
+          BIBLIOGRAPHY_ARG="--bibliography={{.SRC_DIR}}/{{.PUBLICATION}}/refs.bib"
+        elif [ -f "{{.SRC_DIR}}/refs.bib" ]; then
+          BIBLIOGRAPHY_ARG="--bibliography={{.SRC_DIR}}/refs.bib"
+        fi
+        
+        # Build metadata argument
+        METADATA_ARG=""
+        if [ -f "{{.SRC_DIR}}/{{.PUBLICATION}}/metafile.yaml" ]; then
+          METADATA_ARG="--metadata-file={{.SRC_DIR}}/{{.PUBLICATION}}/metafile.yaml"
+        elif [ -f "{{.SRC_DIR}}/metafile.yaml" ]; then
+          METADATA_ARG="--metadata-file={{.SRC_DIR}}/metafile.yaml"
+        fi
+        
+        # Run pandoc
+        pandoc "$INDEX_FILE" \
+          -o {{.OUTPUT_DIR}}/{{.PUBLICATION}}/output.pdf \
+          --standalone \
+          $BIBLIOGRAPHY_ARG \
+          $METADATA_ARG \
+          || { echo "Error: Build failed for {{.PUBLICATION}}"; exit 1; }
+        
+        echo "Success: Built {{.PUBLICATION}} -> {{.OUTPUT_DIR}}/{{.PUBLICATION}}/output.pdf"
+    requires:
+      vars: [PUBLICATION]
+
+  clean:
+    desc: Remove build outputs
+    cmds:
+      - |
+        if [ -d "{{.OUTPUT_DIR}}" ]; then
+          rm -rf {{.OUTPUT_DIR}}
+          echo "Cleaned: {{.OUTPUT_DIR}}/"
+        else
+          echo "Nothing to clean: {{.OUTPUT_DIR}}/ does not exist"
+        fi
+
+  validate:
+    desc: Validate source files (placeholder)
+    cmds:
+      - echo "Validation not yet implemented"
+      - echo "Source directory: {{.SRC_DIR}}/"
+      - |
+        if [ -d "{{.SRC_DIR}}" ]; then
+          PUBLICATIONS=$(ls -1 {{.SRC_DIR}} 2>/dev/null || echo "")
+          if [ -n "$PUBLICATIONS" ]; then
+            echo "Publications found:"
+            echo "$PUBLICATIONS" | sed 's/^/  - /'
+          else
+            echo "No publications found"
+          fi
+        else
+          echo "Source directory not found"
+        fi
