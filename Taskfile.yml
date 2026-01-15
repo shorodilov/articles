@@ -13,13 +13,13 @@ tasks:
   all:
     desc: Build all publications
     cmds:
-      - for: { var: PUBLICATIONS, split: "\n" }
+      - for: { var: PUBLICATIONS, split: "\n", as: ITEM }
         task: build-publication
         vars:
           PUBLICATION: '{{.ITEM}}'
     vars:
       PUBLICATIONS:
-        sh: ls -1 {{.SRC_DIR}} 2>/dev/null || echo ""
+        sh: ls -1 {{.SRC_DIR}} 2>/dev/null || true
 
   build-publication:
     desc: Build a specific publication
@@ -68,6 +68,7 @@ tasks:
         fi
         
         # Run pandoc
+        # Note: output.pdf is the standard filename as specified in the build system requirements
         pandoc "$INDEX_FILE" \
           -o {{.OUTPUT_DIR}}/{{.PUBLICATION}}/output.pdf \
           --standalone \
@@ -94,7 +95,7 @@ tasks:
     desc: Validate source files (placeholder)
     cmds:
       - echo "Validation not yet implemented"
-      - echo "Source directory{{":"}} {{.SRC_DIR}}/"
+      - echo "Source directory - {{.SRC_DIR}}/"
       - |
         if [ -d "{{.SRC_DIR}}" ]; then
           PUBLICATIONS=$(ls -1 {{.SRC_DIR}} 2>/dev/null || echo "")
