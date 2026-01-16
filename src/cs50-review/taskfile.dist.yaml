@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+version: 3
+vars:
+  DIST_DIR: ../../dist
+tasks:
+  default:
+    cmds:
+      - task: build
+  build:
+    desc: Build the distribution files
+    cmds:
+      - pandoc {{.PANDOC_OPTS}} --output={{.DIST_DIR}}/{{.OUTPUT}} {{.INDEX}}
+    vars:
+      INDEX: index.txt
+      FROM: rst
+      OUTPUT: cs50-review/index.html
+      META: --metadata-file=metafile.yaml
+      PANDOC_OPTS: --standalone --citeproc {{.META}} --from={{.FROM}}
+    preconditions:
+      - test -f {{.INDEX}}
+      - test -f metafile.yaml
