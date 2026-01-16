@@ -2,6 +2,12 @@
 /temp/
 /tmp/
 
+### Build outputs template
+/dist/
+/public/
+/build/
+/out/
+
 ### IDE configuration template
 /.vscode/
 /.settings/
