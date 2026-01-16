@@ -10,3 +10,8 @@
 # add shared scopes and inspection profiles
 !/.idea/scopes/
 !/.idea/inspectionProfiles/
+
+### Build artifacts
+/build/
+/dist/
+
